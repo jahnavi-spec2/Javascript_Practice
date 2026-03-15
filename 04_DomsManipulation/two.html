@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style=" background-color: #494545;  color:#ffff">
+    <div class="parent">
+        <div class="day"> Monday</div>
+        <div class="day"> Tuesday</div>
+        <div class="day"> Wednesday</div> 
+        <div class="day"> Thursday</div>
+    </div>
+</body>
+
+<script>
+    const Parent= document.querySelector('.parent')
+    // console.log(Parent)
+    // console.log(Parent.children)
+    // console.log(Parent.children[1].innerHTML);
+
+    for(let i= 0; i<Parent.children.length; i++){
+        console.log(Parent.children[i].innerHTML);
+    }// prints all the onday tuesday we,,,, thursday
+// PARENT TO CHILDREN
+    Parent.children[1].style.color="orange"
+    // console.log(Parent.firstElementChild);//poora ka poora div monday waala aa gya
+    // console.log(Parent.lastElementChild);
+
+    const dayOne= document.querySelector('.day')
+    console.log(dayOne);
+
+    // CHILDREN TO PARENT
+    console.log(dayOne.parentElement)
+    console.log(dayOne.nextElementSibling)// tuesday aaya with its prop
+ console.log("NODES: ", Parent.childNodes)// u will see there appears 9 elements inside node list though we have 4 days ...it is considering tree pattern even space or cursor too counts s a node
+    </script>
+
+</html>

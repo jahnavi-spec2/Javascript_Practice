@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style=" background-color: #494545;  color:#ffff">
+    <ul class=" language">
+        <li> JavaScript</li>
+    </ul>
+</body>
+ <script>
+    function addLanguage(langName){
+      const li= document.createElement('li');
+      li.innerHTML=  '$(langName)'
+      const select=document.querySelector('.language')
+      document.select.appendChild(li)// but isse ab bhi dikhega ngi body pe evn after appending...
+      // ye nhi aaya body mei kyuki ye ek fnc hai so it needs to be called
+    }
+
+    addLanguage("python")// dikkt tree baar baar tarverse karega doms mei everytime we call a fnc...so it is not optimal for storing large date taype
+    addLanguage("typesctript")
+
+
+// solution of above dikkt....OPTIMAAL WAY
+    function addOptlanguage(langName){
+        const li= document.createElement('li')
+        // const addtext= document.createTextnode(langName)
+        // li.appendChild(addText)
+        li.appendText(document.createTextNode(langName))
+        document.querySelector('.language').appendChild(li)
+    }
+    addOptlanguage("java")
+
+
+         // Edit 
+         const secondLang= document.querySelector('li: nth-child(2)')
+         // secondlang.innerHTML=" Mojo"
+         const newLi= document.createElement('li')// created a new li and later on replaced with 2nd li made
+         newLi.textContent= " mojo"
+         secondLang.replaceWith(newLi)
+
+
+         //edit
+         // 1st javascript ko replaxe krte
+
+         const firstLang = document.querySelector("li:first-child")
+         firstLang.outerHTML = '<li> TypeScript </li>'
+
+         // edit we now are seeing remove ka process
+
+         const lastLang= document.queryselector('li:last-child')
+         lastLang.remove()
+    
+ </script>
+</html>
+
+//now w e will go for project
